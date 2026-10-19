@@ -38,6 +38,8 @@ You can do all of these directly on github.com: open the file, click the pencil 
 
 Events appear under "Upcoming" until their date has passed, then move to "Past events" on their own (the site rebuilds every night). The "Register here" button only shows while an event is upcoming.
 
+GitHub switches off the nightly rebuild if nothing in the repository has changed for 60 days. The site stays online, but past events stay under "Upcoming" until the next change. GitHub emails a warning a few days before. To turn it back on: **Actions** tab → **Build and deploy** → **Enable workflow**. Any edit, such as adding an event or newsletter, resets the 60 days.
+
 ### Add a newsletter
 
 1. Upload the PDF to `static/wp-content/uploads/` (any subfolder is fine, e.g. `2026/11/`). On GitHub: open the folder, "Add file" then "Upload files".
@@ -60,50 +62,6 @@ Edit `content/data/team.yml`. Upload the photo to `static/wp-content/uploads/` f
 ### Edit page text
 
 Edit the Markdown files in `content/pages/`. The home page uses a little HTML around each section to place the images next to the text; just edit the text between the tags.
-
-## First-time setup
-
-The images and newsletter PDFs from the old WordPress site are already included in `static/wp-content/uploads/`, at the same paths as before, so old links to newsletter PDFs keep working.
-
-### 1. Put the code on GitHub
-
-1. Create a free account at <https://github.com> (or use an existing one; a GitHub organisation for OSC-W lets several people manage it).
-2. Create a new repository, e.g. `osc-w-website`. It can be public.
-3. Upload all files from this folder (drag them into "uploading an existing file"), including the hidden `.github` folder. If your file browser hides it, use GitHub Desktop or `git` instead.
-
-### 2. Turn on GitHub Pages
-
-1. In the repository: **Settings → Pages**.
-2. Under "Build and deployment", set **Source** to **GitHub Actions**.
-3. Open the **Actions** tab. The "Build and deploy" workflow runs; when it has a green tick, the site is live at `https://<your-account>.github.io/osc-w-website/`.
-
-   Note: on that temporary address, images and links may look broken because the site expects to live at the root of a domain. That fixes itself once your domain points to it (next step).
-
-### 3. Point your domain at it
-
-1. In **Settings → Pages → Custom domain**, enter `openscience-wageningen.nl` and save.
-2. At the company where you registered the domain, open the DNS settings and set:
-
-   | Type  | Name | Value |
-   |-------|------|-------|
-   | A     | @    | 185.199.108.153 |
-   | A     | @    | 185.199.109.153 |
-   | A     | @    | 185.199.110.153 |
-   | A     | @    | 185.199.111.153 |
-   | CNAME | www  | `<your-account>.github.io` |
-
-   Remove the old A records that pointed to your WordPress host. Leave any MX or TXT records alone (they handle email and verification).
-3. Wait until GitHub shows the domain as verified (minutes to a few hours), then tick **Enforce HTTPS**.
-4. Check the site works on the domain, then cancel the old hosting. Keep the domain registration.
-
-### Alternative: Cloudflare Pages
-
-If you'd rather use Cloudflare Pages, connect the GitHub repository there and use these build settings:
-
-- Build command: `pip install -r requirements.txt && python build.py`
-- Build output directory: `_site`
-
-Cloudflare doesn't rebuild on a schedule by itself, so events move to "past" on the next change you push. The GitHub Pages route above handles that automatically.
 
 ## How the build works
 
