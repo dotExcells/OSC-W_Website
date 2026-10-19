@@ -80,21 +80,6 @@ Templates use Jinja2: `{{ page.title }}` inserts a value, `{% for ... %}` and `{
 
 It uses three well-established Python packages: Markdown (Markdown to HTML), PyYAML (reads the YAML files) and Jinja2 (templates).
 
-## Security
-
-The public site is static: plain HTML, CSS, images and PDFs. No code runs when someone visits, and there is no database, login page or plugin to break into or keep patched. HTTPS is provided by GitHub Pages.
-
-What security depends on now:
-
-- **Write access to the GitHub repository.** Anyone with it can change the site, including adding scripts to pages. Give access only to people who need it, and make sure each of them has two-factor authentication turned on (GitHub: Settings → Password and authentication).
-- **The domain registrar account.** Whoever controls it controls where the domain points. Turn on two-factor authentication there if offered.
-
-Other measures in place:
-
-- **Fonts are served from this site**, not from Google Fonts, so visiting the site doesn't send visitors' IP addresses to a third party.
-- **Package versions are pinned** in `requirements.txt`, so a new release of a package can't change the build unless someone chooses to update it. To update: change the version numbers, run `python build.py` locally to check nothing broke, and commit.
-- YAML is read with the safe loader, and templates escape text by default.
-
 ## Fonts
 
 Both fonts are included in `static/fonts/` and served from this site:
