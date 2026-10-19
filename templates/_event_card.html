@@ -1,0 +1,9 @@
+<li class="event-card">
+  <div class="datebox"><span class="month">{{ e.date | date("month") }}</span><span class="day">{{ e.date | date("day") }}</span><span class="year">{{ e.date.year }}</span></div>
+  <div class="event-body">
+    <h3><a href="{{ e.url }}">{{ e.title }}</a></h3>
+    <p class="meta">{{ e.date | date }}{% if e.start %}, {{ e.start }}{% if e.end %} to {{ e.end }}{% endif %}{% endif %}{% if e.location %} · {{ e.location }}{% endif %}</p>
+    {% if e.summary %}<p>{{ e.summary }}</p>{% endif %}
+  </div>
+  {% if e.image %}<a class="event-thumb" href="{{ e.url }}" tabindex="-1"><img src="{{ e.image }}" alt="" loading="lazy"></a>{% endif %}
+</li>

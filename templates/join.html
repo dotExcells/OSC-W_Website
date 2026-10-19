@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap narrow">
+  <h1>{{ page.title }}</h1>
+  <div class="prose">{{ page.content | safe }}</div>
+
+  <p><a class="button" href="{{ page.signup_url }}">Sign up here</a></p>
+  <p class="small"><em>We respect your privacy and your inbox. Your email will only be used to send you the newsletter and updates about our events. You can unsubscribe anytime.</em></p>
+
+  <h2>Any questions?</h2>
+  <p>You can reach us at <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+
+  <h2>Previous Newsletters</h2>
+  <ul class="newsletters">
+    {% for n in data.newsletters | sort(attribute="number", reverse=True) %}
+    <li><a href="{{ n.file }}"><span class="num">#{{ "%02d" | format(n.number) }}</span> OSC-W Newsletter, {{ n.title }}</a> <span class="small">PDF</span></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

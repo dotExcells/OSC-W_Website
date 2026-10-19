@@ -1,0 +1,21 @@
+# Site-wide settings. Change the menu here.
+title: OSC-W
+full_title: The Wageningen Open Science Community
+tagline: Open Science Community Wageningen
+domain: openscience-wageningen.nl
+url: https://openscience-wageningen.nl
+email: osc-wageningen@wur.nl
+logo: /wp-content/uploads/2024/12/OSC_logo_small.png
+favicon: /wp-content/uploads/2024/12/OSC-W-Favicon-300x300.png
+
+nav:
+  - title: Home
+    url: /
+  - title: About Us
+    url: /about/
+  - title: Join Us
+    url: /join-us/
+  - title: Funding Opportunities
+    url: /funding-opportunities/
+  - title: Events
+    url: /events/

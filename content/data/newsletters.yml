@@ -1,0 +1,33 @@
+# Newsletter archive on the Join Us page. Shown newest first (sorted by number).
+# Put the PDF in static/wp-content/uploads/ (or static/newsletters/) and add an entry.
+
+- number: 10
+  title: May 2026
+  file: /wp-content/uploads/2026/06/OSC-W-Newsletter-May-2026.pdf
+- number: 9
+  title: April 2026
+  file: /wp-content/uploads/2026/03/OSC-W-Newsletter-Early-April-2026.pdf
+- number: 8
+  title: March 2026
+  file: /wp-content/uploads/2026/03/OSC-W-Newsletter-March-2026.pdf
+- number: 7
+  title: November 2025
+  file: /wp-content/uploads/2026/02/OSC-W-Newsletter-November-2025.pdf
+- number: 6
+  title: September 2025
+  file: /wp-content/uploads/2025/09/OSC-W-Newsletter-06-September-2025.pdf
+- number: 5
+  title: July 2025
+  file: /wp-content/uploads/2025/07/OSC-W-Newsletter-July-2025.pdf
+- number: 4
+  title: April 2025
+  file: /wp-content/uploads/2025/07/OSC-W-Newsletter-April-2025.pdf
+- number: 3
+  title: January 2025
+  file: /wp-content/uploads/2025/07/OSC-W-Newsletter-January-2025.pdf
+- number: 2
+  title: December 2024
+  file: /wp-content/uploads/2025/07/OSC-W-Newsletter-December-2024.pdf
+- number: 1
+  title: November 2024
+  file: /wp-content/uploads/2025/07/OSC-W-Newsletter-November-2024.pdf

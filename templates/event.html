@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block main %}
+<article class="wrap narrow">
+  <p><a href="/events/">« All events</a></p>
+  {% if event.date < today %}<p class="notice">This event has passed.</p>{% endif %}
+  <h1>{{ event.title }}</h1>
+
+  <ul class="event-details">
+    <li><strong>Date:</strong> {{ event.date | date }}</li>
+    {% if event.start %}<li><strong>Time:</strong> {{ event.start }}{% if event.end %} to {{ event.end }}{% endif %}</li>{% endif %}
+    {% if event.location %}<li><strong>Location:</strong> {{ event.location }}</li>{% endif %}
+  </ul>
+
+  {% if event.register and event.date >= today %}
+  <p><a class="button" href="{{ event.register }}">Register here</a></p>
+  {% endif %}
+
+  {% if event.image %}<img class="event-banner" src="{{ event.image }}" alt="">{% endif %}
+
+  <div class="prose">{{ event.content | safe }}</div>
+
+  {% if event.register and event.date >= today %}
+  <p><a class="button" href="{{ event.register }}">Register here</a></p>
+  {% endif %}
+</article>
+{% endblock %}

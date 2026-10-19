@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap narrow">
+  <h1>{{ page.title }}</h1>
+  <div class="prose">{{ page.content | safe }}</div>
+</div>
+
+<section class="wrap">
+  <h2 class="center">Our Team</h2>
+  <ul class="team">
+    {% for person in data.team %}
+    <li>
+      <img src="{{ person.photo }}" alt="{{ person.name }}" width="160" height="160" loading="lazy">
+      <h3>{{ person.name }}</h3>
+      <p>{{ person.position }}<br>{{ person.group }}</p>
+      {% if person.role %}<p class="role">{{ person.role }}</p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

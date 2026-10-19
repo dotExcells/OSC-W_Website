@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <h1>{{ page.title }}</h1>
+      <p class="hero-actions">
+        <a class="button" href="/join-us/">Join the community</a>
+        <a class="button ghost" href="/events/">See events</a>
+      </p>
+    </div>
+    <img src="{{ page.hero_image }}" alt="People building a tower together" width="300" height="271">
+  </div>
+</section>
+
+<div class="wrap home-sections prose">
+  {{ page.content | safe }}
+</div>
+
+{% if upcoming %}
+<section class="wrap home-events">
+  <h2>Upcoming events</h2>
+  <ul class="event-list">
+    {% for e in upcoming[:3] %}{% include "_event_card.html" %}{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

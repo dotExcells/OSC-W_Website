@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.permalink != "/" %}{{ page.nav_title or page.title }} | {% endif %}{{ site.title }}: {{ site.full_title }}</title>
+  {% if page.summary %}<meta name="description" content="{{ page.summary | trim }}">{% endif %}
+  <link rel="icon" href="{{ site.favicon }}">
+  <link rel="alternate" type="text/calendar" title="OSC-W events" href="/events.ics">
+  {% if open_sans_file %}<style>@font-face { font-family: "Open Sans"; font-weight: 300 800; font-display: swap; src: url("/fonts/{{ open_sans_file }}"); }</style>
+  {% endif %}  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="logo" href="/"><img src="{{ site.logo }}" alt="{{ site.title }}" width="200" height="60"></a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open menu">
+      <label for="menu-toggle" class="menu-button" aria-hidden="true"><span></span></label>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          {% for item in site.nav %}
+          {% set active = (item.url == "/" and page.permalink == "/") or (item.url != "/" and ((page.permalink or page.url or "").startswith(item.url) or (item.url == "/events/" and event is defined))) %}
+          <li><a href="{{ item.url }}"{% if active %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    {% block main %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a href="/"><img src="{{ site.logo }}" alt="{{ site.title }}" width="160" height="48"></a>
+      <p>{{ site.full_title }}<br><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+  </footer>
+</body>
+</html>

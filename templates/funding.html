@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap narrow">
+  <h1>{{ page.title }}</h1>
+  <div class="prose">{{ page.content | safe }}</div>
+
+  <h2>Currently open calls</h2>
+  {% for call in data.funding %}
+  <article class="card">
+    <h3>{{ call.name }}</h3>
+    {{ call.description | markdown | safe }}
+    {% if call.deadline %}<p class="deadline">{{ call.deadline }}</p>{% endif %}
+    <p><a href="{{ call.link }}">More information</a></p>
+  </article>
+  {% else %}
+  <p>No open calls right now.</p>
+  {% endfor %}
+
+  <p><strong>That's all for now...</strong><br>Check back here soon for more funding opportunities.</p>
+</div>
+{% endblock %}

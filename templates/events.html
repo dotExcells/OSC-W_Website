@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main %}
+<div class="wrap">
+  <h1>{{ page.title }}</h1>
+  {% if page.content %}<div class="prose">{{ page.content | safe }}</div>{% endif %}
+
+  <h2>Upcoming</h2>
+  {% if upcoming %}
+  <ul class="event-list">{% for e in upcoming %}{% include "_event_card.html" %}{% endfor %}</ul>
+  {% else %}
+  <p>There are no upcoming events right now. <a href="/join-us/">Sign up for the newsletter</a> to hear about the next one.</p>
+  {% endif %}
+
+  {% if past %}
+  <h2>Past events</h2>
+  <ul class="event-list past">{% for e in past %}{% include "_event_card.html" %}{% endfor %}</ul>
+  {% endif %}
+
+  <p class="small">Add our events to your calendar: <a href="/events.ics">subscribe to the calendar feed</a>.</p>
+</div>
+{% endblock %}

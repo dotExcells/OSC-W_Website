@@ -1,0 +1,53 @@
+# Open funding calls shown on the Funding Opportunities page, in this order.
+# Remove a call when it closes. description can use Markdown.
+
+- name: 4TU The FAIR Data Fund
+  description: >
+    The FAIR Data Fund offers researchers an opportunity to apply for financial aid
+    to cover the costs of making their research outputs FAIR: Findable, Accessible,
+    Interoperable and Reusable. The FDF can be used to make datasets, data collections,
+    software, code, and other research outputs FAIR. We encourage researchers to seek
+    funding for whichever research outputs they think would be most improved from
+    being made more FAIR.
+  deadline: Deadline November 30, 2026
+  link: https://community.data.4tu.nl/the-fair-data-fund/
+
+- name: OSNL FAIR Research Outputs
+  description: >
+    This funding round supports making research output open and FAIR in order to
+    maximise the impact of research. The focus is on non-traditional research outputs,
+    as well as for activities that demonstrably contribute to this objective.
+  deadline: Closes 23 February 2027
+  link: https://www.openscience.nl/en/calls/fair-research-outputs
+
+- name: OSNL Open Science Infrastructure
+  description: >
+    This Call for proposals focuses on the improvement of existing digital
+    infrastructures that support open science practices. It covers the entire spectrum
+    of open science and is deliberately broad in scope to be inclusive of the
+    community's diverse digital infrastructure needs.
+  deadline: Letter of intent required before 3 November 2026
+  link: https://www.openscience.nl/en/calls/open-science-infrastructure
+
+- name: OSNL Mobility and Development Programme
+  description: >
+    Through this programme, open science professionals can apply for funding for a
+    study visit to a research institution abroad. This enables open science
+    professionals to gain valuable knowledge and experience of best practices in the
+    field of open science.
+  deadline: Deadline 3 December 2026
+  link: https://www.openscience.nl/en/calls/mobility-and-development-programme
+
+- name: NWO Open Access Books
+  description: >
+    Project leaders or co-applicants of awarded NWO research projects can apply for
+    funding of the costs of Open Access publishing of academic books that result from
+    NWO funding.
+  link: https://www.nwo.nl/en/calls/open-access-books
+
+- name: WUR Support Fund for Open Educational Resources
+  description: >
+    Small grants to cover additional effort required to make existing materials openly
+    available, such as formatting, licensing, or minor adaptations for broad audiences.
+  deadline: Ongoing call
+  link: https://servicenow.wur.nl/esc?id=kb_article&sysparm_article=KB0018105
