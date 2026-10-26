@@ -2,7 +2,7 @@
 
 The website of the Wageningen Open Science Community, <https://openscience-wageningen.nl>.
 
-All content is plain text: Markdown for pages and events, YAML for lists (team, funding calls, newsletters). A small Python script (`build.py`) turns it into a static website. GitHub builds and publishes it automatically whenever something changes, so editing the site means editing a text file.
+All content is plain text: Markdown for pages and events, YAML for lists (team, funding calls, newsletters). A small Python script (`build.py`) turns it into a static website. Editing the site means editing a Markdown (text) file; GitHub builds and publishes it automatically whenever something changes.
 
 ## Where things are
 
