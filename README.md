@@ -82,12 +82,9 @@ It uses three well-established Python packages: Markdown (Markdown to HTML), PyY
 
 ## Fonts
 
-Both fonts are included in `static/fonts/` and served from this site:
+The whole site uses **Open Sans**, included in `static/fonts/` and served from this site (`OpenSans.woff`, one file with all weights from light to extra bold).
 
-- **Open Sans** for body text and headings (`OpenSans.woff`, one file with all weights from light to extra bold)
-- **Poppins** for the menu and buttons (`Poppins-Regular.woff`, `Poppins-Medium.woff`)
-
-They were reduced to the characters used in Western European languages to keep them small (about 85 KB together). Both are under the SIL Open Font License (see `static/fonts/LICENSE.txt`), which allows this.
+It was reduced to the characters used in Western European languages to keep it small (about 63 KB). It is under the SIL Open Font License (see `static/fonts/LICENSE.txt`), which allows this.
 
 ## Preview on your own computer (optional)
 
