@@ -166,12 +166,8 @@ def build():
     upcoming = [e for e in events if e["date"] >= today]
     past = list(reversed([e for e in events if e["date"] < today]))
 
-    # Use a self-hosted Open Sans file if one has been added to static/fonts/.
-    open_sans = next((f.name for f in sorted((STATIC / "fonts").glob("OpenSans*"))
-                      if f.suffix in (".woff2", ".woff", ".ttf")), None)
-
     common = dict(site=site, data=data, events=events, upcoming=upcoming,
-                  past=past, today=today, open_sans_file=open_sans)
+                  past=past, today=today)
 
     redirects = {}
 
