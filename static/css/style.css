@@ -12,9 +12,8 @@
   font-display: swap;
   src: url("/fonts/Poppins-Medium.woff") format("woff");
 }
-/* Open Sans: see the "Fonts" section of the README. Until the file is added,
-   body text uses Open Sans if the visitor has it installed, otherwise their
-   system font. */
+/* Open Sans (static/fonts/OpenSans.woff) is declared in templates/base.html.
+   build.py adds that rule when an OpenSans file is in static/fonts/. */
 
 /* OSC-W colours, taken from the old Elementor theme */
 :root {
